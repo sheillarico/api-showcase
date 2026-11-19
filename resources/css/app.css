@@ -7,8 +7,17 @@
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+    --color-gold-50: #fdf9e8;
+    --color-gold-100: #faf0c2;
+    --color-gold-200: #f3e08a;
+    --color-gold-300: #e8c95a;
+    --color-gold-400: #d9ae32;
+    --color-gold-500: #c9971c;
+    --color-gold-600: #a97c12;
+    --color-gold-700: #86600f;
 }
 
 html {
     scroll-behavior: smooth;
 }
+
