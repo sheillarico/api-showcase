@@ -91,7 +91,7 @@ export default function TranslationSection() {
                 setSource(target);
                 setTarget(source);
               }}
-              className="rounded-lg border border-neutral-300 px-4 py-2 text-sm hover:bg-neutral-100"
+              className="rounded-lg border border-neutral-300 bg-white px-4 py-2 text-sm transition hover:border-gold-400 hover:bg-gold-50 active:scale-95"
             >
               ⇄ Swap
             </button>
@@ -102,7 +102,7 @@ export default function TranslationSection() {
         {error && <ErrorNote message={error} />}
 
         {result && (
-          <div className="mt-6 rounded-xl border border-neutral-200 p-5">
+          <div className="hover-lift mt-6 rounded-xl border border-neutral-200 bg-white p-5">
             <p className="text-xs text-neutral-500">Translation</p>
             <p className="mt-1 text-xl font-semibold">{result.data.translation}</p>
           </div>

@@ -66,7 +66,7 @@ export default function WeatherSection() {
 
         {f && now && (
           <div className="mt-6">
-            <div className="flex items-center gap-4 rounded-xl border border-neutral-200 p-4">
+            <div className="hover-lift flex items-center gap-4 rounded-xl border border-neutral-200 bg-white p-4">
               <span className="text-5xl">{now.icon}</span>
               <div>
                 <p className="text-sm text-neutral-500">
@@ -81,7 +81,7 @@ export default function WeatherSection() {
             </div>
             <ul className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
               {f.daily.time.slice(0, 7).map((d, i) => (
-                <li key={d} className="rounded-lg border border-neutral-200 p-3 text-sm">
+                <li key={d} className="hover-lift rounded-lg border border-neutral-200 bg-white p-3 text-sm">
                   <p className="text-xs text-neutral-500">{day(d)}</p>
                   <p className="text-xl">{describe(f.daily.weather_code[i]).icon}</p>
                   <p>

@@ -49,9 +49,9 @@ export default function GeolocationSection() {
 
         {l && (
           <>
-            <dl className="mt-6 divide-y divide-neutral-200 rounded-xl border border-neutral-200 text-sm">
+            <dl className="mt-6 divide-y divide-neutral-200 overflow-hidden rounded-xl border border-neutral-200 bg-white text-sm">
               {rows.map(([k, v]) => (
-                <div key={k} className="flex justify-between gap-4 px-4 py-2.5">
+                <div key={k} className="flex justify-between gap-4 px-4 py-2.5 transition-colors hover:bg-neutral-50">
                   <dt className="text-neutral-500">{k}</dt>
                   <dd className="font-medium">{v ?? '—'}</dd>
                 </div>
@@ -62,7 +62,7 @@ export default function GeolocationSection() {
                 href={`https://www.openstreetmap.org/?mlat=${l.latitude}&mlon=${l.longitude}#map=11/${l.latitude}/${l.longitude}`}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-3 inline-block text-sm underline hover:text-neutral-600"
+                className="mt-3 inline-block text-sm underline decoration-gold-400 underline-offset-4 transition hover:text-gold-700"
               >
                 View on OpenStreetMap ↗
               </a>

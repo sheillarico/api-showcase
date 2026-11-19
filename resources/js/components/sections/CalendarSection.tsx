@@ -80,13 +80,13 @@ export default function CalendarSection() {
         {error && <ErrorNote message={error} />}
 
         {result && (
-          <ul className="mt-6 max-h-96 divide-y divide-gold-100 overflow-auto rounded-xl border border-gold-200 text-sm">
+          <ul className="mt-6 max-h-96 divide-y divide-neutral-200 overflow-auto rounded-xl border border-neutral-200 bg-white text-sm">
             {result.data.length === 0 && <li className="px-4 py-3 text-neutral-500">No holidays found.</li>}
             {result.data.map((h) => (
               <li
                 key={h.date + h.name}
-                className={`flex justify-between gap-4 px-4 py-2.5 ${
-                  h.date >= today ? 'bg-gold-50 text-neutral-900' : 'text-neutral-400'
+                className={`flex justify-between gap-4 px-4 py-2.5 transition-colors ${
+                  h.date >= today ? 'text-neutral-900 hover:bg-gold-50' : 'text-neutral-400 hover:bg-neutral-50'
                 }`}
               >
                 <span>
