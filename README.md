@@ -1,58 +1,162 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# API Showcase
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**Five free APIs. One clean integration.**
 
-## About Laravel
+API Showcase is a full-stack web application demonstrating third-party REST API integration using Laravel and React.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+The React frontend communicates with a versioned Laravel REST API (`/api/v1`), while the backend handles request validation, response formatting, caching, and error handling.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Each integration includes a working demonstration of its API endpoint, request parameters, and JSON response.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Features
 
-## Learning Laravel
+- **Weather Forecast** – Search for a city and retrieve current weather conditions and a 7-day forecast.
+- **Currency Converter** – Convert currencies using European Central Bank reference exchange rates.
+- **Translation** – Translate text between supported languages.
+- **Geolocation** – Retrieve approximate location information based on IP address.
+- **Public Holiday Calendar** – Retrieve public holidays by country and year.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Tech Stack
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+**Frontend**
+- React 19
+- TypeScript
+- Vite
+- Tailwind CSS 4
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+**Backend**
+- PHP 8.3
+- Laravel 13
+- RESTful API
+- Laravel Cache
+- PHPUnit
 
-## Agentic Development
+## Third-Party APIs
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+| Provider | Purpose |
+|---|---|
+| [Open-Meteo](https://open-meteo.com/) | Weather forecasts and geocoding |
+| [Frankfurter](https://frankfurter.dev/) | Currency conversion |
+| [MyMemory](https://mymemory.translated.net/) | Text translation |
+| [ipwho.is](https://ipwho.is/) | IP geolocation |
+| [Nager.Date](https://date.nager.at/) | Public holiday data |
 
-```bash
-composer require laravel/boost --dev
+## Architecture
 
-php artisan boost:install
+```text
+React Frontend
+      |
+      | HTTP Requests
+      v
+Laravel REST API
+      |
+      |-- Request Validation
+      |-- Service Layer
+      |-- Response Formatting
+      |-- Caching
+      |-- Error Handling
+      |
+      v
+External API Providers
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+All third-party API requests are handled by Laravel rather than directly by the frontend.
 
-## Contributing
+## API Endpoints
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+All endpoints use the `/api/v1` prefix.
 
-## Code of Conduct
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/forecasts?city={city}` | Weather forecast |
+| GET | `/conversions?from={currency}&to={currency}&amount={amount}` | Currency conversion |
+| POST | `/translations` | Text translation |
+| GET | `/locations/current` | IP-based geolocation |
+| GET | `/countries/{code}/holidays?year={year}` | Public holidays |
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Example Requests
 
-## Security Vulnerabilities
+**Weather Forecast**
+```http
+GET /api/v1/forecasts?city=Lagonoy
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+**Currency Conversion**
+```http
+GET /api/v1/conversions?from=PHP&to=CAD&amount=100
+```
+
+**Translation**
+```http
+POST /api/v1/translations
+Content-Type: application/json
+
+{
+  "text": "May pagkain ba?",
+  "source": "tl",
+  "target": "en"
+}
+```
+
+**Geolocation**
+```http
+GET /api/v1/locations/current
+```
+
+**Public Holidays**
+```http
+GET /api/v1/countries/US/holidays?year=2026
+```
+
+## Getting Started
+
+### Prerequisites
+
+- PHP 8.3 or later
+- Composer
+- Node.js and npm
+- Git
+
+### 1. Clone the Repository
+
+```bash
+git clone <YOUR_GITHUB_REPOSITORY_URL>
+cd <YOUR_PROJECT_DIRECTORY>
+```
+
+### 2. Backend Setup
+
+```bash
+composer install
+copy .env.example .env
+php artisan key:generate
+php artisan serve
+```
+
+### 3. Frontend Setup
+
+Open another terminal:
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Configure the frontend API base URL to point to your Laravel backend.
+
+## Testing
+
+Run the backend test suite:
+
+```bash
+php artisan test
+```
+
+External API responses are simulated using Laravel's HTTP Client testing utilities, including `Http::fake`.
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is licensed under the [MIT License](LICENSE).
+
+Third-party APIs remain subject to their respective terms and usage policies.
