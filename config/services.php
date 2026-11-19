@@ -2,18 +2,6 @@
 
 return [
 
-    /*
-    |--------------------------------------------------------------------------
-    | Third Party Services
-    |--------------------------------------------------------------------------
-    |
-    | This file is for storing the credentials for third party services such
-    | as Resend, Postmark, AWS, and more. This file provides the de facto
-    | location for this type of information, allowing packages to have
-    | a conventional file to locate the various service credentials.
-    |
-    */
-
     'postmark' => [
         'key' => env('POSTMARK_API_KEY'),
     ],
@@ -34,5 +22,14 @@ return [
             'channel' => env('SLACK_BOT_USER_DEFAULT_CHANNEL'),
         ],
     ],
+
+    'open_meteo' => [
+        'geocode_url'  => 'https://geocoding-api.open-meteo.com/v1/search',
+        'forecast_url' => 'https://api.open-meteo.com/v1/forecast',
+    ],
+    'frankfurter' => ['url' => 'https://api.frankfurter.dev/v1'],
+    'mymemory'    => ['url' => 'https://api.mymemory.translated.net/get'],
+    'ipwho'       => ['url' => 'https://ipwho.is'],
+    'nager'       => ['url' => 'https://date.nager.at/api/v3'],
 
 ];
