@@ -80,24 +80,27 @@ export default function CalendarSection() {
         {error && <ErrorNote message={error} />}
 
         {result && (
-          <ul className="mt-6 max-h-96 divide-y divide-neutral-200 overflow-auto rounded-xl border border-neutral-200 bg-white text-sm">
-            {result.data.length === 0 && <li className="px-4 py-3 text-neutral-500">No holidays found.</li>}
-            {result.data.map((h) => (
-              <li
-                key={h.date + h.name}
-                className={`flex justify-between gap-4 px-4 py-2.5 transition-colors ${
-                  h.date >= today ? 'text-neutral-900 hover:bg-gold-50' : 'text-neutral-400 hover:bg-neutral-50'
-                }`}
-              >
-                <span>
-                  <span className="font-medium">{h.name}</span>
-                  {h.local_name !== h.name && <span className="block text-xs">{h.local_name}</span>}
-                </span>
-                <span className={`whitespace-nowrap ${h.date >= today ? 'font-medium text-gold-700' : ''}`}>
-                  {fmt(h.date)}
-                </span>
-              </li>
-            ))}
+          <ul className="mt-6 max-h-96 divide-y divide-neutral-800 overflow-auto rounded-xl border border-neutral-900 bg-neutral-900 text-sm">
+            {result.data.length === 0 && <li className="px-4 py-3 text-neutral-400">No holidays found.</li>}
+            {result.data.map((h) => {
+              const upcoming = h.date >= today;
+              return (
+                <li
+                  key={h.date + h.name}
+                  className={`flex justify-between gap-4 px-4 py-2.5 transition-colors hover:bg-neutral-800 ${
+                    upcoming ? 'text-white' : 'text-neutral-500'
+                  }`}
+                >
+                  <span>
+                    <span className="font-medium">{h.name}</span>
+                    {h.local_name !== h.name && <span className="block text-xs">{h.local_name}</span>}
+                  </span>
+                  <span className={`whitespace-nowrap ${upcoming ? 'font-medium text-gold-300' : ''}`}>
+                    {fmt(h.date)}
+                  </span>
+                </li>
+              );
+            })}
           </ul>
         )}
       </div>

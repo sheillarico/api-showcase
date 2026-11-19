@@ -32,7 +32,7 @@ export default function Landing() {
 
   return (
     <div className="min-h-screen bg-white text-neutral-900 antialiased">
-      <header className="sticky top-0 z-10 border-b border-neutral-200 bg-white/90 backdrop-blur">
+      <header className="sticky top-0 z-10 border-b border-neutral-300 bg-white/90 backdrop-blur">
         <nav className="mx-auto flex max-w-6xl items-center gap-6 overflow-x-auto px-4 py-3 text-sm">
           <a href="#top" className="group flex items-center gap-2 font-bold">
             <span className="h-2.5 w-2.5 rounded-full bg-gold-500 transition-transform duration-300 group-hover:scale-150" />
@@ -44,7 +44,7 @@ export default function Landing() {
                 key={n.id}
                 href={`#${n.id}`}
                 className={`relative whitespace-nowrap py-1 transition-colors after:absolute after:-bottom-0.5 after:left-0 after:h-0.5 after:w-full after:origin-left after:bg-gold-500 after:transition-transform after:duration-300 hover:text-neutral-900 hover:after:scale-x-100 motion-reduce:after:transition-none ${
-                  active === n.id ? 'font-semibold text-neutral-900 after:scale-x-100' : 'text-neutral-500 after:scale-x-0'
+                  active === n.id ? 'font-semibold text-neutral-900 after:scale-x-100' : 'text-neutral-600 after:scale-x-0'
                 }`}
               >
                 {n.label}
@@ -67,7 +67,7 @@ export default function Landing() {
           </h1>
 
           <p
-            className="animate-fade-up mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-neutral-600"
+            className="animate-fade-up mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-neutral-700"
             style={{ animationDelay: '200ms' }}
           >
             API Showcase is a working reference for integrating third-party APIs the right way. Instead of calling
@@ -88,16 +88,18 @@ export default function Landing() {
           </div>
 
           <div
-            className="animate-fade-up mx-auto mt-12 flex max-w-xl flex-wrap items-center justify-center gap-3 text-xs text-neutral-500"
+            className="animate-fade-up mx-auto mt-12 flex max-w-xl flex-wrap items-center justify-center gap-3 text-xs"
             style={{ animationDelay: '400ms' }}
           >
-            <span className="hover-lift rounded-lg border border-neutral-200 bg-white px-3 py-2">React</span>
+            <span className="rounded-lg border border-neutral-300 bg-white px-3 py-2 text-neutral-700">React</span>
             <span className="text-gold-500">→</span>
-            <span className="hover-lift rounded-lg border border-neutral-200 bg-white px-3 py-2 text-neutral-900">
+            <span className="rounded-lg border border-neutral-900 bg-neutral-900 px-3 py-2 text-gold-300">
               Laravel /api/v1 + cache
             </span>
             <span className="text-gold-500">→</span>
-            <span className="hover-lift rounded-lg border border-neutral-200 bg-white px-3 py-2">Free provider</span>
+            <span className="rounded-lg border border-neutral-300 bg-white px-3 py-2 text-neutral-700">
+              Free provider
+            </span>
           </div>
         </div>
 
@@ -110,7 +112,7 @@ export default function Landing() {
         <CalendarSection />
       </main>
 
-      <footer className="border-t border-neutral-200 bg-neutral-50 py-8 text-center text-sm text-neutral-500">
+      <footer className="border-t border-neutral-300 bg-neutral-100 py-8 text-center text-sm text-neutral-600">
         Built with Laravel and React. Data from Open-Meteo, Frankfurter, MyMemory, ipwho.is and Nager.Date.
       </footer>
     </div>

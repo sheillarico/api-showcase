@@ -66,26 +66,30 @@ export default function WeatherSection() {
 
         {f && now && (
           <div className="mt-6">
-            <div className="hover-lift flex items-center gap-4 rounded-xl border border-neutral-200 bg-white p-4">
+            <div className="hover-lift flex items-center gap-4 rounded-xl border border-neutral-900 bg-neutral-900 p-4 text-white">
               <span className="text-5xl">{now.icon}</span>
               <div>
-                <p className="text-sm text-neutral-500">
+                <p className="text-sm text-neutral-400">
                   {f.location.name}
                   {f.location.country ? `, ${f.location.country}` : ''}
                 </p>
-                <p className="text-3xl font-bold">{Math.round(f.current.temperature_2m)}°C</p>
-                <p className="text-sm text-neutral-600">
+                <p className="text-3xl font-bold text-gold-300">{Math.round(f.current.temperature_2m)}°C</p>
+                <p className="text-sm text-neutral-300">
                   {now.label} · wind {f.current.wind_speed_10m} km/h
                 </p>
               </div>
             </div>
             <ul className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
               {f.daily.time.slice(0, 7).map((d, i) => (
-                <li key={d} className="hover-lift rounded-lg border border-neutral-200 bg-white p-3 text-sm">
-                  <p className="text-xs text-neutral-500">{day(d)}</p>
+                <li
+                  key={d}
+                  className="hover-lift rounded-lg border border-neutral-900 bg-neutral-900 p-3 text-sm text-white"
+                >
+                  <p className="text-xs text-neutral-400">{day(d)}</p>
                   <p className="text-xl">{describe(f.daily.weather_code[i]).icon}</p>
                   <p>
-                    {Math.round(f.daily.temperature_2m_max[i])}° / {Math.round(f.daily.temperature_2m_min[i])}°
+                    <span className="text-gold-300">{Math.round(f.daily.temperature_2m_max[i])}°</span> /{' '}
+                    {Math.round(f.daily.temperature_2m_min[i])}°
                   </p>
                 </li>
               ))}

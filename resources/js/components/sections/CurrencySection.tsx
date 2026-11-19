@@ -78,7 +78,7 @@ export default function CurrencySection() {
                 setFrom(to);
                 setTo(from);
               }}
-              className="rounded-lg border border-neutral-300 bg-white px-4 py-2 text-sm transition hover:border-gold-400 hover:bg-gold-50 active:scale-95"
+              className="rounded-lg border border-neutral-900 bg-white px-4 py-2 text-sm font-medium transition hover:border-gold-400 hover:bg-gold-50 active:scale-95"
             >
               ⇄ Swap
             </button>
@@ -88,10 +88,10 @@ export default function CurrencySection() {
         {error && <ErrorNote message={error} />}
 
         {c && (
-          <div className="hover-lift mt-6 rounded-xl border border-neutral-200 bg-white p-5">
-            <p className="text-sm text-neutral-500">{money(c.amount, c.from)} =</p>
-            <p className="text-3xl font-bold">{money(c.result, c.to)}</p>
-            <p className="mt-2 text-sm text-neutral-500">
+          <div className="hover-lift mt-6 rounded-xl border border-neutral-900 bg-neutral-900 p-5 text-white">
+            <p className="text-sm text-neutral-400">{money(c.amount, c.from)} =</p>
+            <p className="text-3xl font-bold text-gold-300">{money(c.result, c.to)}</p>
+            <p className="mt-2 text-sm text-neutral-400">
               1 {c.from} = {c.rate} {c.to} · rates from {c.date}
             </p>
           </div>

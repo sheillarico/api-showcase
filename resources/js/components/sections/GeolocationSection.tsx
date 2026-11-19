@@ -43,17 +43,17 @@ export default function GeolocationSection() {
         <Button onClick={() => run('GET', '/locations/current')} disabled={loading}>
           {loading ? 'Locating…' : 'Detect my location'}
         </Button>
-        <p className="mt-2 text-xs text-neutral-500">Your IP is sent to the lookup provider only when you click.</p>
+        <p className="mt-2 text-xs text-neutral-600">Your IP is sent to the lookup provider only when you click.</p>
 
         {error && <ErrorNote message={error} />}
 
         {l && (
           <>
-            <dl className="mt-6 divide-y divide-neutral-200 overflow-hidden rounded-xl border border-neutral-200 bg-white text-sm">
+            <dl className="mt-6 divide-y divide-neutral-800 overflow-hidden rounded-xl border border-neutral-900 bg-neutral-900 text-sm text-white">
               {rows.map(([k, v]) => (
-                <div key={k} className="flex justify-between gap-4 px-4 py-2.5 transition-colors hover:bg-neutral-50">
-                  <dt className="text-neutral-500">{k}</dt>
-                  <dd className="font-medium">{v ?? '—'}</dd>
+                <div key={k} className="flex justify-between gap-4 px-4 py-2.5 transition-colors hover:bg-neutral-800">
+                  <dt className="text-neutral-400">{k}</dt>
+                  <dd className="font-medium text-gold-300">{v ?? '—'}</dd>
                 </div>
               ))}
             </dl>
