@@ -1,3 +1,4 @@
+
 <?php
 
 namespace App\Providers;
@@ -12,6 +13,7 @@ use App\Services\Currency\FrankfurterService;
 use App\Services\Geolocation\IpWhoService;
 use App\Services\Translation\MyMemoryService;
 use App\Services\Weather\OpenMeteoService;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -31,6 +33,8 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
-        //
+        if (app()->environment('production')) {
+            URL::forceScheme('https');
+        }
     }
 }
