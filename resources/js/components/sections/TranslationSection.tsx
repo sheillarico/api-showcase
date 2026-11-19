@@ -24,7 +24,7 @@ const LANGUAGES: [string, string][] = [
   ['zh-CN', 'Chinese (Simplified)'],
 ];
 
-const MAX = 500;
+const MAX = 250;
 
 export default function TranslationSection() {
   const [text, setText] = useState('Good morning! How are you today?');

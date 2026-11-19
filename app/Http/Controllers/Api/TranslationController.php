@@ -13,7 +13,7 @@ class TranslationController extends Controller
         $lang = ['required', 'string', 'regex:/^[a-z]{2,3}(-[A-Za-z]{2,4})?$/'];
 
         $v = $request->validate([
-            'text' => 'required|string|max:500',
+            'text' => 'required|string|max:250',
             'source' => $lang,
             'target' => $lang,
         ]);
