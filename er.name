@@ -1,0 +1,65 @@
+[35m.env.example[m[36m:[m[32m28[m[36m:[m# DB_[1;31mPASSWORD[m=
+[35m.env.example[m[36m:[m[32m47[m[36m:[mREDIS_[1;31mPASSWORD[m=null
+[35m.env.example[m[36m:[m[32m55[m[36m:[mMAIL_[1;31mPASSWORD[m=null
+[35m.env.example[m[36m:[m[32m60[m[36m:[mAWS_[1;31mSECRET[m_ACCESS_KEY=
+[35mapp/Models/User.php[m[36m:[m[32m13[m[36m:[m#[Fillable(['name', 'email', '[1;31mpassword[m'])]
+[35mapp/Models/User.php[m[36m:[m[32m14[m[36m:[m#[Hidden(['[1;31mpassword[m', 'remember_[1;31mtoken[m'])]
+[35mapp/Models/User.php[m[36m:[m[32m29[m[36m:[m            '[1;31mpassword[m' => 'hashed',
+[35mcomposer.lock[m[36m:[m[32m1091[m[36m:[m                "ext-[1;31mtoken[mizer": "*",
+[35mcomposer.lock[m[36m:[m[32m1207[m[36m:[m                "web-[1;31mtoken[m/jwt-library": "^4.1"
+[35mcomposer.lock[m[36m:[m[32m1246[m[36m:[m                "web-[1;31mtoken[m/jwt-library": "Required to sign Mercure JWTs and use end-to-end encrypted channels (^4.1)."
+[35mcomposer.lock[m[36m:[m[32m2358[m[36m:[m                "ext-[1;31mtoken[mizer": "to use Nette\\Utils\\Reflection::getUseStatements()"
+[35mcomposer.lock[m[36m:[m[32m2390[m[36m:[m            "description": "🛠  Nette Utils: lightweight utilities for string & array manipulation, image handling, safe JSON encoding/decoding, validation, slug or strong [1;31mpassword[m generating etc.",
+[35mcomposer.lock[m[36m:[m[32m2400[m[36m:[m                "[1;31mpassword[m",
+[35mcomposer.lock[m[36m:[m[32m2430[m[36m:[m                "ext-[1;31mtoken[mizer": "*",
+[35mcomposer.lock[m[36m:[m[32m3061[m[36m:[m                "ext-[1;31mtoken[mizer": "*",
+[35mcomposer.lock[m[36m:[m[32m6677[m[36m:[m                "ext-[1;31mtoken[mizer": "*",
+[35mcomposer.lock[m[36m:[m[32m7111[m[36m:[m                "theseer/[1;31mtoken[mizer": "^2.0.1"
+[35mcomposer.lock[m[36m:[m[32m8481[m[36m:[m                "ext-[1;31mtoken[mizer": "*",
+[35mcomposer.lock[m[36m:[m[32m8519[m[36m:[m            "name": "theseer/[1;31mtoken[mizer",
+[35mcomposer.lock[m[36m:[m[32m8523[m[36m:[m                "url": "https://github.com/theseer/[1;31mtoken[mizer.git",
+[35mcomposer.lock[m[36m:[m[32m8528[m[36m:[m                "url": "https://api.github.com/repos/theseer/[1;31mtoken[mizer/zipball/7989e43bf381af0eac72e4f0ca5bcbfa81658be4",
+[35mcomposer.lock[m[36m:[m[32m8534[m[36m:[m                "ext-[1;31mtoken[mizer": "*",
+[35mcomposer.lock[m[36m:[m[32m8555[m[36m:[m            "description": "A small library for converting [1;31mtoken[mized PHP source code into XML and potentially other formats",
+[35mcomposer.lock[m[36m:[m[32m8557[m[36m:[m                "issues": "https://github.com/theseer/[1;31mtoken[mizer/issues",
+[35mcomposer.lock[m[36m:[m[32m8558[m[36m:[m                "source": "https://github.com/theseer/[1;31mtoken[mizer/tree/2.0.1"
+[35mconfig/auth.php[m[36m:[m[32m12[m[36m:[m    | This option defines the default authentication "guard" and [1;31mpassword[m
+[35mconfig/auth.php[m[36m:[m[32m20[m[36m:[m        '[1;31mpassword[ms' => env('AUTH_[1;31mPASSWORD[m_BROKER', 'users'),
+[35mconfig/auth.php[m[36m:[m[32m78[m[36m:[m    | Resetting [1;31mPassword[ms
+[35mconfig/auth.php[m[36m:[m[32m81[m[36m:[m    | These configuration options specify the behavior of Laravel's [1;31mpassword[m
+[35mconfig/auth.php[m[36m:[m[32m82[m[36m:[m    | reset functionality, including the table utilized for [1;31mtoken[m storage
+[35mconfig/auth.php[m[36m:[m[32m85[m[36m:[m    | The expiry time is the number of minutes that each reset [1;31mtoken[m will be
+[35mconfig/auth.php[m[36m:[m[32m86[m[36m:[m    | considered valid. This security feature keeps [1;31mtoken[ms short-lived so
+[35mconfig/auth.php[m[36m:[m[32m90[m[36m:[m    | generating more [1;31mpassword[m reset [1;31mtoken[ms. This prevents the user from
+[35mconfig/auth.php[m[36m:[m[32m91[m[36m:[m    | quickly generating a very large amount of [1;31mpassword[m reset [1;31mtoken[ms.
+[35mconfig/auth.php[m[36m:[m[32m95[m[36m:[m    '[1;31mpassword[ms' => [
+[35mconfig/auth.php[m[36m:[m[32m98[m[36m:[m            'table' => env('AUTH_[1;31mPASSWORD[m_RESET_[1;31mTOKEN[m_TABLE', '[1;31mpassword[m_reset_[1;31mtoken[ms'),
+[35mconfig/auth.php[m[36m:[m[32m106[m[36m:[m    | [1;31mPassword[m Confirmation Timeout
+[35mconfig/auth.php[m[36m:[m[32m109[m[36m:[m    | Here you may define the number of seconds before a [1;31mpassword[m confirmation
+[35mconfig/auth.php[m[36m:[m[32m110[m[36m:[m    | window expires and users are asked to re-enter their [1;31mpassword[m via the
+[35mconfig/auth.php[m[36m:[m[32m115[m[36m:[m    '[1;31mpassword[m_timeout' => env('AUTH_[1;31mPASSWORD[m_TIMEOUT', 10800),
+[35mconfig/cache.php[m[36m:[m[32m67[m[36m:[m                env('MEMCACHED_[1;31mPASSWORD[m'),
+[35mconfig/cache.php[m[36m:[m[32m90[m[36m:[m            '[1;31msecret[m' => env('AWS_[1;31mSECRET[m_ACCESS_KEY'),
+[35mconfig/database.php[m[36m:[m[32m54[m[36m:[m            '[1;31mpassword[m' => env('DB_[1;31mPASSWORD[m', ''),
+[35mconfig/database.php[m[36m:[m[32m74[m[36m:[m            '[1;31mpassword[m' => env('DB_[1;31mPASSWORD[m', ''),
+[35mconfig/database.php[m[36m:[m[32m94[m[36m:[m            '[1;31mpassword[m' => env('DB_[1;31mPASSWORD[m', ''),
+[35mconfig/database.php[m[36m:[m[32m109[m[36m:[m            '[1;31mpassword[m' => env('DB_[1;31mPASSWORD[m', ''),
+[35mconfig/database.php[m[36m:[m[32m160[m[36m:[m            '[1;31mpassword[m' => env('REDIS_[1;31mPASSWORD[m'),
+[35mconfig/database.php[m[36m:[m[32m173[m[36m:[m            '[1;31mpassword[m' => env('REDIS_[1;31mPASSWORD[m'),
+[35mconfig/filesystems.php[m[36m:[m[32m53[m[36m:[m            '[1;31msecret[m' => env('AWS_[1;31mSECRET[m_ACCESS_KEY'),
+[35mconfig/mail.php[m[36m:[m[32m47[m[36m:[m            '[1;31mpassword[m' => env('MAIL_[1;31mPASSWORD[m'),
+[35mconfig/queue.php[m[36m:[m[32m59[m[36m:[m            '[1;31msecret[m' => env('AWS_[1;31mSECRET[m_ACCESS_KEY'),
+[35mconfig/services.php[m[36m:[m[32m6[m[36m:[m        'key' => env('POSTMARK_[1;31mAPI_KEY[m'),
+[35mconfig/services.php[m[36m:[m[32m10[m[36m:[m        'key' => env('RESEND_[1;31mAPI_KEY[m'),
+[35mconfig/services.php[m[36m:[m[32m15[m[36m:[m        '[1;31msecret[m' => env('AWS_[1;31mSECRET[m_ACCESS_KEY'),
+[35mconfig/services.php[m[36m:[m[32m21[m[36m:[m            'bot_user_oauth_[1;31mtoken[m' => env('SLACK_BOT_USER_OAUTH_[1;31mTOKEN[m'),
+[35mdatabase/factories/UserFactory.php[m[36m:[m[32m16[m[36m:[m     * The current [1;31mpassword[m being used by the factory.
+[35mdatabase/factories/UserFactory.php[m[36m:[m[32m18[m[36m:[m    protected static ?string $[1;31mpassword[m;
+[35mdatabase/factories/UserFactory.php[m[36m:[m[32m31[m[36m:[m            '[1;31mpassword[m' => static::$[1;31mpassword[m ??= Hash::make('[1;31mpassword[m'),
+[35mdatabase/factories/UserFactory.php[m[36m:[m[32m32[m[36m:[m            'remember_[1;31mtoken[m' => Str::random(10),
+[35mdatabase/migrations/0001_01_01_000000_create_users_table.php[m[36m:[m[32m19[m[36m:[m            $table->string('[1;31mpassword[m');
+[35mdatabase/migrations/0001_01_01_000000_create_users_table.php[m[36m:[m[32m20[m[36m:[m            $table->remember[1;31mToken[m();
+[35mdatabase/migrations/0001_01_01_000000_create_users_table.php[m[36m:[m[32m24[m[36m:[m        Schema::create('[1;31mpassword[m_reset_[1;31mtoken[ms', function (Blueprint $table) {
+[35mdatabase/migrations/0001_01_01_000000_create_users_table.php[m[36m:[m[32m26[m[36m:[m            $table->string('[1;31mtoken[m');
+[35mdatabase/migrations/0001_01_01_000000_create_users_table.php[m[36m:[m[32m46[m[36m:[m        Schema::dropIfExists('[1;31mpassword[m_reset_[1;31mtoken[ms');
+[35mpackage-lock.json[m[36m:[m[32m26
